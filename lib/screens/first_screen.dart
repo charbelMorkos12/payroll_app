@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:payroll_app/screens/second_screen.dart';
 
 import '../models/user_data.dart';
 
@@ -17,22 +17,23 @@ class FirstScreen extends StatelessWidget {
         padding: EdgeInsets.all(16),
         child: Column(
           children: [
-            TextField(controller: nameController, decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Name'),
-              ),
-            TextField(controller: positionController, decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Position')
-              ),
-            TextField(controller: hoursController, decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Hours Worked')
-              ),
-            TextField(controller: rateController, decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Hourly Rate')
-              ),
+            TextField(
+              controller: nameController,
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(), labelText: 'Name'),
+            ),
+            TextField(
+                controller: positionController,
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(), labelText: 'Position')),
+            TextField(
+                controller: hoursController,
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(), labelText: 'Hours Worked')),
+            TextField(
+                controller: rateController,
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(), labelText: 'Hourly Rate')),
             ElevatedButton(
               child: Text('Submit'),
               onPressed: () {
@@ -41,6 +42,12 @@ class FirstScreen extends StatelessWidget {
                   positionController.text,
                   double.parse(hoursController.text),
                   double.parse(rateController.text),
+                );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SecondScreen(userData: userData),
+                  ),
                 );
               },
             ),
