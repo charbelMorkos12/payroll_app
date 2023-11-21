@@ -12,19 +12,56 @@ class SecondScreen extends StatelessWidget {
     
     final expectedPay = userData.hoursWorked * userData.hourlyRate;
     return Scaffold(
-      appBar: AppBar(title: Text('User Information')),
+      appBar: AppBar(title: Text('Salary Overview')),
       body: Padding(
         padding: EdgeInsets.all(16),
-        child: Column(
+        child: Center(child:
+           Column(
           children: [
-            Text('Name: ${userData.name}'),
-            Text('Position: ${userData.position}'),
-            Text('Hours Worked: ${userData.hoursWorked}'),
-            Text('Hourly Rate: ${userData.hourlyRate}'),
-            Text('Expected Pay: $expectedPay'),
+             const SizedBox(width: 30, height: 30,),
+            Text(
+              'Name: ${userData.name}',// the Text
+              style: TextStyle(// styling the text
+              fontSize: 20.0,//the size of the text
+              fontWeight: FontWeight.bold,// font weight
+              color: Colors.purple)
+            ),//text color
+             const SizedBox(width: 30, height: 30,),
+             Text(
+              'Position: ${userData.position}',// the Text
+              style: TextStyle(// styling the text
+              fontSize: 20.0,//the size of the text
+              fontWeight: FontWeight.bold,// font weight
+              color: Colors.purple)
+            ),//text color
+             const SizedBox(width: 30, height: 30,),
+             Text(
+              'Hours Worked: ${userData.hoursWorked} hours',// the Text
+              style: TextStyle(// styling the text
+              fontSize: 20.0,//the size of the text
+              fontWeight: FontWeight.bold,// font weight
+              color: Colors.purple)
+            ),//text color
+             const SizedBox(width: 30, height: 30,),
+             Text(
+              'Hourly Rate: ${userData.hourlyRate} Dollars',// the Text
+              style: TextStyle(// styling the text
+              fontSize: 20.0,//the size of the text
+              fontWeight: FontWeight.bold,// font weight
+              color: Colors.purple)
+            ),//text color
+
+             const SizedBox(width: 30, height: 30,),
+             Text(
+              'Expected Pay: $expectedPay',// the Text
+              style: TextStyle(// styling the text
+              fontSize: 20.0,//the size of the text
+              fontWeight: FontWeight.bold,// font weight
+              color: Colors.black)
+            ),//text color
           ],
         ),
-      ),
-    );
-  }
+      ),),
+    );
+  }
 }
